@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../../../mi-psl-2016/sorting/helloword.iml" filepath="$PROJECT_DIR$/../../../mi-psl-2016/sorting/helloword.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sorting.iml" filepath="$PROJECT_DIR$/sorting.iml" />
     </modules>
   </component>
 </project>
