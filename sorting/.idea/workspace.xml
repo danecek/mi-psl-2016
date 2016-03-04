@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="59ece2cc-788a-4f29-81b6-c29fea3eefb4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.scala" afterPath="$PROJECT_DIR$/src/Main.scala" />
     </list>
     <ignored path="helloword.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -673,7 +672,7 @@
       <workItem from="1457093212423" duration="135000" />
       <workItem from="1457096621474" duration="623000" />
       <workItem from="1457097595118" duration="417000" />
-      <workItem from="1457098124732" duration="1759000" />
+      <workItem from="1457098124732" duration="1765000" />
     </task>
     <task id="LOCAL-00001" summary="ddd">
       <created>1457098172990</created>
@@ -693,11 +692,17 @@
       <option name="project" value="LOCAL" />
       <updated>1457098363449</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="ddd">
+      <created>1457099887107</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1457099887107</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6202000" />
+    <option name="totallyTimeSpent" value="6208000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1922" height="1056" extended-state="6" />
