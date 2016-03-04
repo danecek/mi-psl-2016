@@ -30,8 +30,7 @@ object Main {
   }
 
   def main(args: Array[String]) {
-    //println(args mkString ", ")
-   // println(System.currentTimeMillis())
+
     println(mergeSort(Seq(1, 5, 2, 23, 45, 1,3,5,100,100, 3,4,5)))
   }
 }
