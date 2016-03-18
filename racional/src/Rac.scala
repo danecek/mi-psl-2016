@@ -1,54 +1,42 @@
+class Rac(n: Int, d: Int) extends Ordered[Rac] {
 
-trait C[T <: C[T]] extends Comparable[T] {
-  this: T =>
-  def <(that: T): Boolean = this.compareTo(that) < 0
+  require(d != 0)
 
-  def >=(that: T) = !(that < this)
+  override def compare(that: Rac): Int = this.nom * that.den - that.nom * this.den
 
+  import Rac._
+
+  val nom = n / nsd(n, d)
+  val den = d / nsd(n, d)
+
+  def this(n: Int) {
+    this(n, 1)
+  }
+
+  def *(that: Rac) = new Rac(this.nom * that.nom, this.den * that.den)
+
+  override def equals(that: Any): Boolean = {
+    case x: Int => this.nom == x && this.den == 1
+    case x: Rac => this.nom == x.nom && this.den == x.den
+    case _ => false
+  }
+
+  def ===(that: Rac) = this.equals(that: Rac)
+
+  override def toString() = s"Rac($nom,$den)"
 }
-
-class Rac(n: Int, d: Int) extends C[Rac] {
-
-  def compareTo(that: Rac) = 1
-
-  def nsd = 1
-
-  val nom = n / nsd
-  val den = d / nsd
-
-  def *(r: Rac) = Rac(this.nom * r.nom, this.den * r.den)
-
-  override def equals(that: Any) = eq(that.asInstanceOf[AnyRef])
-
-
-}
-
 
 object Rac {
 
-
-  implicit class AsRac(v : Int) {
-    def === (r : Rac, x : Int = 1) = {
-      println("my==")
-      true
-
-    }
-
+  private def nsd(x: Int, y: Int): Int = {
+    if (x < y) nsd(y, x)
+    else if (y == 0) x
+    else nsd(x % y, y)
   }
 
-  def apply(n: Int, d: Int) = {
-    println(n.asInstanceOf[Double] / d)
-    new Rac(n, d)
-  }
+  def apply(n: Int, d: Int) = new Rac(n, d)
 
-
-  def main(args: Array[String]) {
-    import Rac._
-    val r = Rac(2, 3)
-    println(r == r)
-    println(2 .=== (r, 1))
-  }
+  implicit def int2Rac(x: Int) = Rac(x, 1)
 
 }
-
 
