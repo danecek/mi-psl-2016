@@ -15,7 +15,7 @@ class Rac(n: Int, d: Int) extends Ordered[Rac] {
 
   def *(that: Rac) = new Rac(this.nom * that.nom, this.den * that.den)
 
-  override def equals(that: Any): Boolean = {
+  override def equals(that: Any): Boolean = that match {
     case x: Int => this.nom == x && this.den == 1
     case x: Rac => this.nom == x.nom && this.den == x.den
     case _ => false
