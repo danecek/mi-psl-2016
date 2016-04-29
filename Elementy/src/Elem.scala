@@ -29,16 +29,27 @@ class CharElem(c: Char, override val width: Int, override val height: Int) exten
 
   def content: Seq[String] = {
     val line: String = c.toString * width
-    val cc = for (ui <- 1 to width) yield line
+    val cc = for (ui <- 1 to height) yield line
     cc
   }
 }
 
 object Main {
-  def main(args: Array[String]): Unit = {
 
-    println(new StringElemH("abcd"))
-    println(new StringElemV("abcd"))
+  def rec(n : Int) : Elem = {
+
+    if (n == 1) new CharElem('*', 1, 1)
+    else {
+      if (n % 2 == 0) rec(n - 1) above(new CharElem('-', n, 1))
+      else rec(n - 1) beside (new CharElem('|', 1, n))
+
+    }
+
+  }
+  def main(args: Array[String]): Unit = {
+    // println(new CharElem('-', 10, 1))
+  //println(new CharElem('|', 1, 10))
+   println(rec(10))
 
   }
 

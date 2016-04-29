@@ -1,0 +1,18 @@
+@import model.User
+@(users: List[User])
+@main("Users table") {
+
+    <table border="1">
+    @for(u <- users) {
+        <tr>
+            <td>
+            @u.name
+            </td>
+            <td>
+            @u.address
+            </td>
+        </tr>
+    }
+    </table>
+
+}
